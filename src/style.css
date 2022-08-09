@@ -1,0 +1,43 @@
+.container {
+  width: 30%;
+  margin: 10% auto;
+  font-size: 4vh;
+  background-color: rgba(0, 0, 0, 0.06);
+}
+
+.titile {
+  padding: 3px 15px;
+}
+
+.add {
+  background-color: white;
+}
+
+.additem {
+  width: 98%;
+  font-size: 2vh;
+  padding: 10px;
+  border: none;
+}
+
+.item {
+  padding: 20px;
+  font-size: 2vh;
+  border-top: 1px solid rgb(197, 195, 195);
+}
+
+.move-btn {
+  float: right;
+}
+
+.clear {
+  text-align: center;
+  color: grey;
+  padding: 10px;
+  border-top: 1px solid rgb(197, 195, 195);
+  font-size: 2vh;
+}
+
+.underline {
+  text-decoration: line-through;
+}
