@@ -5,7 +5,7 @@ const generateItems = (taskitem) => {
   let result = '';
   if (taskitem.isCompeleted) {
     result = `
-                <div class="item">
+                <div class="item" draggable="true">
                 <input type="checkbox" name="checkbox" data-id ="${taskitem.index}" class="checktask" checked>
                 <input type="text" value="${taskitem.description}"data-id ="${taskitem.index}" class="savedItem underline"  >
                 <i class="fa fa-trash delete-btn" data-id ="${taskitem.index}"  aria-hidden="true"></i>
@@ -13,7 +13,7 @@ const generateItems = (taskitem) => {
                 `;
   } else {
     result = `
-                <div class="item">
+                <div class="item" draggable="true">
                 <input type="checkbox" name="checkbox"  data-id ="${taskitem.index}" class="checktask" >
                <input type="text" value="${taskitem.description}" data-id ="${taskitem.index}" class="savedItem"  >
                <i class="fa fa-trash delete-btn" data-id ="${taskitem.index}" aria-hidden="true"></i>
