@@ -41,11 +41,7 @@ class storeTask {
 
   static removeCompeletedTask() {
     let tasks = storeTask.getTasks();
-    tasks.forEach((task, i) => {
-      if (task.isCompeleted) {
-        tasks.splice(i, 1);
-      }
-    });
+    tasks = tasks.filter((x) => x.isCompeleted === false);
     tasks = storeTask.reArrange(tasks);
     localStorage.setItem('task', JSON.stringify(tasks));
   }
