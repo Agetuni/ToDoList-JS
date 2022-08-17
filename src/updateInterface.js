@@ -43,7 +43,8 @@ class manipulateInterface {
     document.querySelectorAll('.delete-btn').forEach((item) => {
       item.addEventListener('click', function addCheckListner() {
         const index = this.getAttribute('data-id');
-        storeTask.removeTask(index);
+        const tasks = storeTask.removeTask(index, storeTask.getTasks());
+        localStorage.setItem('task', JSON.stringify(tasks));
         manipulateInterface.displayTasks();
       });
     });
