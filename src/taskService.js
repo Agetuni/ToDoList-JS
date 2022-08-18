@@ -43,25 +43,12 @@ class storeTask {
     return tasks;
   }
 
-  static updateStatus(index, status,tasks) {
-    tasks[index - 1].isCompeleted = status;    
-    return tasks;
-  }
-
-  static updateDescription(index, desc,tasks) {
-    tasks[index - 1].description = desc;   
-    return tasks;
-  }
-
-  static updateStatus(index, status) {
-    const tasks = storeTask.getTasks();
+  static updateStatus(index, status, tasks) {
     tasks[index - 1].isCompeleted = status;
-    localStorage.setItem('task', JSON.stringify(tasks));
     return tasks;
   }
 
-  static updateDescription(index, desc) {
-    const tasks = storeTask.getTasks();
+  static updateDescription(index, desc, tasks) {
     tasks[index - 1].description = desc;
     return tasks;
   }

@@ -36,7 +36,7 @@ class manipulateInterface {
       item.addEventListener('change', function addCheckListner() {
         const index = this.getAttribute('data-id');
         const status = this.checked;
-         var tasks=storeTask.updateStatus(index, status, storeTask.getTasks());
+        const tasks = storeTask.updateStatus(index, status, storeTask.getTasks());
         localStorage.setItem('task', JSON.stringify(tasks));
         manipulateInterface.displayTasks();
       });
@@ -51,8 +51,8 @@ class manipulateInterface {
     });
     document.querySelectorAll('.clear').forEach((item) => {
       item.addEventListener('click', () => {
-         var tasks =storeTask.removeCompeletedTask(storeTask.getTasks());
-         localStorage.setItem('task', JSON.stringify(tasks));
+        const tasks = storeTask.removeCompeletedTask(storeTask.getTasks());
+        localStorage.setItem('task', JSON.stringify(tasks));
         manipulateInterface.displayTasks();
       });
     });
@@ -62,7 +62,7 @@ class manipulateInterface {
         if (event.key === 'Enter') {
           const index = this.getAttribute('data-id');
           const description = this.value;
-          var tasks = storeTask.updateDescription(index, description, storeTask.getTasks());
+          const tasks = storeTask.updateDescription(index, description, storeTask.getTasks());
           localStorage.setItem('task', JSON.stringify(tasks));
           manipulateInterface.displayTasks();
         }
