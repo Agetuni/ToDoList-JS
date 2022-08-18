@@ -1,12 +1,6 @@
 class storeTask {
   static getTasks() {
-    let tasks;
-    if (localStorage.getItem('task') === null) {
-      tasks = [];
-    } else {
-      tasks = JSON.parse(localStorage.getItem('task'));
-    }
-    return tasks;
+    return JSON.parse(localStorage.getItem('task')) || [];
   }
 
   static reArrange(tasks) {
