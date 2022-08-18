@@ -138,7 +138,7 @@ describe('removeCompeletedTask()', () => {
         index: 3,
         description: 'three',
         isCompeleted: true,
-      }
+      },
     ];
 
     const expected = [
@@ -170,7 +170,7 @@ describe('removeCompeletedTask()', () => {
         index: 3,
         description: 'three',
         isCompeleted: true,
-      }
+      },
     ];
     const expected = [
       {
@@ -200,7 +200,7 @@ describe('updateStatus()', () => {
         index: 2,
         description: 'two',
         isCompeleted: false,
-      }
+      },
     ];
 
     const expected = [
@@ -213,7 +213,7 @@ describe('updateStatus()', () => {
         index: 2,
         description: 'two',
         isCompeleted: false,
-      }
+      },
     ];
     // Act
     const output = storeTask.updateStatus(1, true, tasks);
@@ -232,7 +232,7 @@ describe('updateStatus()', () => {
         index: 2,
         description: 'two',
         isCompeleted: false,
-      }
+      },
     ];
 
     const expected = [
@@ -245,7 +245,7 @@ describe('updateStatus()', () => {
         index: 2,
         description: 'two',
         isCompeleted: false,
-      }
+      },
     ];
     // Act
     const output = storeTask.updateStatus(1, false, tasks);
@@ -268,7 +268,7 @@ describe('updateDescription()', () => {
         index: 2,
         description: 'descriptions should not be updated',
         isCompeleted: false,
-      }
+      },
     ];
 
     const expected = [
@@ -281,7 +281,7 @@ describe('updateDescription()', () => {
         index: 2,
         description: 'descriptions should not be updated',
         isCompeleted: false,
-      }
+      },
     ];
     // Act
     const output = storeTask.updateDescription(1, 'description updated', tasks);
