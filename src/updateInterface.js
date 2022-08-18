@@ -36,20 +36,23 @@ class manipulateInterface {
       item.addEventListener('change', function addCheckListner() {
         const index = this.getAttribute('data-id');
         const status = this.checked;
-        storeTask.updateStatus(index, status);
+         var tasks=storeTask.updateStatus(index, status, storeTask.getTasks());
+        localStorage.setItem('task', JSON.stringify(tasks));
         manipulateInterface.displayTasks();
       });
     });
     document.querySelectorAll('.delete-btn').forEach((item) => {
       item.addEventListener('click', function addCheckListner() {
         const index = this.getAttribute('data-id');
-        storeTask.removeTask(index);
+        const tasks = storeTask.removeTask(index, storeTask.getTasks());
+        localStorage.setItem('task', JSON.stringify(tasks));
         manipulateInterface.displayTasks();
       });
     });
     document.querySelectorAll('.clear').forEach((item) => {
       item.addEventListener('click', () => {
-        storeTask.removeCompeletedTask();
+         var tasks =storeTask.removeCompeletedTask(storeTask.getTasks());
+         localStorage.setItem('task', JSON.stringify(tasks));
         manipulateInterface.displayTasks();
       });
     });
@@ -59,7 +62,8 @@ class manipulateInterface {
         if (event.key === 'Enter') {
           const index = this.getAttribute('data-id');
           const description = this.value;
-          storeTask.updateDescription(index, description);
+          var tasks = storeTask.updateDescription(index, description, storeTask.getTasks());
+          localStorage.setItem('task', JSON.stringify(tasks));
           manipulateInterface.displayTasks();
         }
       });

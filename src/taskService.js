@@ -16,8 +16,7 @@ class storeTask {
     return tasks;
   }
 
-  static saveTask(task) {
-    const tasks = storeTask.getTasks();
+  static saveTask(task, tasks) {
     if (tasks.length === 0) {
       task.index = 1;
     } else {
@@ -25,38 +24,34 @@ class storeTask {
       task.index = lastTask.index + 1;
     }
     tasks.push(task);
-    localStorage.setItem('task', JSON.stringify(tasks));
+    return tasks;
   }
 
-  static removeTask(index) {
-    let tasks = storeTask.getTasks();
+  static removeTask(index, tasks) {
     tasks.forEach((task, i) => {
       if (task.index === parseInt(index, 10)) {
         tasks.splice(i, 1);
       }
     });
     tasks = storeTask.reArrange(tasks);
-    localStorage.setItem('task', JSON.stringify(tasks));
+    return tasks;
   }
 
-  static removeCompeletedTask() {
-    let tasks = storeTask.getTasks();
+  static removeCompeletedTask(tasks) {
     tasks = tasks.filter((x) => x.isCompeleted === false);
     tasks = storeTask.reArrange(tasks);
-    localStorage.setItem('task', JSON.stringify(tasks));
+    return tasks;
   }
 
-  static updateStatus(index, status) {
-    const tasks = storeTask.getTasks();
-    tasks[index - 1].isCompeleted = status;
-    localStorage.setItem('task', JSON.stringify(tasks));
+  static updateStatus(index, status,tasks) {
+    tasks[index - 1].isCompeleted = status;    
+    return tasks;
   }
 
-  static updateDescription(index, desc) {
-    const tasks = storeTask.getTasks();
-    tasks[index - 1].description = desc;
-    localStorage.setItem('task', JSON.stringify(tasks));
+  static updateDescription(index, desc,tasks) {
+    tasks[index - 1].description = desc;   
+    return tasks;
   }
 }
 
-export default storeTask;
+module.exports = storeTask;
