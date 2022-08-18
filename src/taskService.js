@@ -52,6 +52,19 @@ class storeTask {
     tasks[index - 1].description = desc;   
     return tasks;
   }
+
+  static updateStatus(index, status) {
+    const tasks = storeTask.getTasks();
+    tasks[index - 1].isCompeleted = status;
+    localStorage.setItem('task', JSON.stringify(tasks));
+    return tasks;
+  }
+
+  static updateDescription(index, desc) {
+    const tasks = storeTask.getTasks();
+    tasks[index - 1].description = desc;
+    return tasks;
+  }
 }
 
 module.exports = storeTask;
